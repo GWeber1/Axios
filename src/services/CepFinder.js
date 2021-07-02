@@ -1,6 +1,6 @@
 const btn=document.querySelector(".btn"); //transporte dos dados do form ao JS
 const inputValue = document.querySelector(".inputValue");
-const retornaValor = document.querySelector(".RetornaValor");
+const retornaValor = document.querySelector(".retornaValor");
 
 btn.addEventListener("click", (e) => { //Ao clicar no botão....
   e.preventDefault();
