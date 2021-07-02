@@ -1,6 +1,6 @@
 const btn=document.querySelector(".btn"); //transporte dos dados do form ao JS
 const inputValue = document.querySelector(".inputValue");
-const insertInfo = document.querySelector(".RetornaValor");
+const retornaValor = document.querySelector(".RetornaValor");
 
 btn.addEventListener("click", (e) => { //Ao clicar no botão....
   e.preventDefault();
@@ -16,13 +16,14 @@ btn.addEventListener("click", (e) => { //Ao clicar no botão....
   .get('https://viacep.com.br/ws/'+newValueInput+'/json/')
   .then(function (res) {
     console.log(res);
-    insertInfo.innerHTML = ""; //retorno das informações
+    retornaValor.innerHTML = ""; //retorno das informações
     createText("Logradouro: "+res.data.logradouro);
     createText("Localidade: "+res.data.localidade + "/" + res.data.uf);
     createText("Bairro: "+res.data.bairro);
     createText("Complemento: "+res.data.complemento);
+    createText("DDD: "+res.data.ddd);
   }).catch(function() {
-    insertInfo.innerHTML = "";
+    retormaValor.innerHTML = "";
     createText("Ha algo errado.");
   });
 });
@@ -32,5 +33,5 @@ function createText(responseCep) { // envio das informações para a tela de for
   let createText = document.createTextNode(responseCep);
 
   createEl.appendChild(createText);
-  insertInfo.appendChild(createEl);
+  retornaValor.appendChild(createEl);
 }
