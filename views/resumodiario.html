@@ -1,0 +1,22 @@
+<link href="../styles/style.css" rel="stylesheet"/>
+<html lang="pt-BR">
+<head>
+  <title>Resumo Diário</title>
+  <meta charset="utf-8"/>
+</head>
+<body>
+  <strong style= 'margin: 10px; margin-left: 10px'>OBS: Os valores de hoje apenas aparecerão após fechamento da bolsa</strong>
+  <div id="app" class="mb-3" style='margin: 15px; margin-left: 20px; width: 200px' align="center">
+    <select class="form-select form-select-sm moeda" aria-label=".form-select-sm example">
+      <option value="BTC">Bitcoin</option>
+      <option value="LTC">Litecoin</option>
+      <option value="ETH">Ethereum</option>
+    </select>
+    <input type="date" placeholder="Data" class="form-control dmy"/>
+    <button class="btn btn-primary" style="margin-top: 5px; margin-left: 10px" id="btn">Confirmar</button>
+    <main class="retornaValor"></main>
+  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="../src/services/resumodiario.js"></script>
+</body>
+</html>
